@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UV Visible Band Gap Virtual Simulator</title>
+<style>
+:root{--bg:#eef3f8;--card:#fff;--ink:#152437;--muted:#617286;--blue:#1769aa;--cyan:#16a6a1;--red:#d9534f;--line:#d9e3ed;--shadow:0 10px 28px rgba(26,53,80,.09)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#eef6fb 0,#f7f4ef 100%);color:var(--ink);font:15px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select{font:inherit}
+header{background:linear-gradient(120deg,#103c64,#1769aa 55%,#168f93);color:#fff;padding:30px max(24px,calc((100vw - 1440px)/2));box-shadow:var(--shadow)}
+header h1{margin:0 0 6px;font-size:clamp(24px,3vw,38px);letter-spacing:-.03em}header p{margin:0;opacity:.87;max-width:920px}.badge{display:inline-block;margin-top:14px;padding:5px 10px;border:1px solid #ffffff50;border-radius:999px;background:#ffffff15;font-size:12px}
+main{max-width:1440px;margin:22px auto;padding:0 22px 40px}.grid{display:grid;grid-template-columns:330px 1fr;gap:18px}.card{background:var(--card);border:1px solid #dae4ed;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.card h2{font-size:16px;margin:0;padding:15px 18px;border-bottom:1px solid var(--line);background:#f9fbfd}.body{padding:16px 18px}.sidebar{display:flex;flex-direction:column;gap:16px}.control{margin-bottom:15px}.control label{display:flex;justify-content:space-between;gap:10px;font-weight:650;margin-bottom:6px}.value{color:var(--blue);font-variant-numeric:tabular-nums}.control small{display:block;color:var(--muted);margin-top:5px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}input[type=range]{width:100%;accent-color:var(--blue)}select,input[type=number]{width:100%;border:1px solid #bdcad7;border-radius:8px;padding:8px;background:white;color:var(--ink)}button{border:0;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer}.primary{background:var(--blue);color:white}.secondary{background:#e7eef5;color:#20415f}.danger{background:#fff0ef;color:#a6322e}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.status{border-left:4px solid var(--cyan);background:#edf9f8;padding:11px;border-radius:7px;color:#245a5c;font-size:13px}.content{display:flex;flex-direction:column;gap:18px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{padding:15px 16px}.metric .k{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}.metric .v{font-size:25px;font-weight:800;margin-top:4px;font-variant-numeric:tabular-nums}.metric .u{font-size:13px;color:var(--muted)}.plots{display:grid;grid-template-columns:1fr 1fr;gap:18px}.plot-wrap{padding:10px 12px 14px}.plot-title{font-weight:750;margin:4px 6px 0}.plot-sub{color:var(--muted);font-size:12px;margin:1px 6px 7px}svg{width:100%;height:340px;display:block;background:#fff}.axis{stroke:#66788a;stroke-width:1}.gridline{stroke:#e8eef4;stroke-width:1}.tick{fill:#647487;font-size:11px}.label{fill:#2b3d50;font-size:12px;font-weight:650}.curve{fill:none;stroke:var(--blue);stroke-width:2.5}.dots{fill:#fff;stroke:var(--blue);stroke-width:2}.tauc{fill:#16a6a1;stroke:#0e7f7c;stroke-width:1.2}.fit{stroke:var(--red);stroke-width:2.4;stroke-dasharray:7 5}.intercept{stroke:#d9534f;stroke-width:1.5;stroke-dasharray:3 3}.legend{fill:#566b7e;font-size:11px}.data-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.table-scroll{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;font-size:13px}th{position:sticky;top:0;background:#164f7b;color:white;padding:9px 7px;z-index:1}td{padding:6px 7px;border-bottom:1px solid #e5ebf1;text-align:center}tbody tr:nth-child(even){background:#f6f9fb}td input{padding:5px;text-align:center;min-width:72px}.theory p{margin:5px 0 12px}.equation{font-family:Cambria Math,serif;background:#f4f8fb;padding:10px;border-radius:8px;text-align:center;font-size:17px}.steps{margin:0;padding-left:20px}.steps li{margin:7px 0}.footer-note{color:var(--muted);font-size:12px;margin-top:12px}.warning{color:#9a5d0b;background:#fff7e7;border-left-color:#e6a13a}.ok{color:#245a5c}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}.plots,.data-layout{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){main{padding:0 10px 30px}.sidebar{display:flex}.metrics{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}.plots{gap:10px}svg{height:290px}}
+@media print{body{background:white}.sidebar,.buttons{display:none}.grid{display:block}.card{box-shadow:none}.plots{grid-template-columns:1fr 1fr}header{padding:18px}.content{gap:8px}}
+</style>
+</head>
+<body>
+<a href="../index.html" aria-label="Return to experiment list" style="position:fixed;right:18px;bottom:18px;z-index:20;background:#102f4d;color:#fff;text-decoration:none;padding:10px 14px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.22)">← All experiments</a>
+<header>
+  <h1>UV–Visible Band Gap Virtual Simulator</h1>
+  <p>Determine the optical energy band gap from an absorption spectrum and a Tauc plot. Change the experimental parameters, apply the settings, select the linear region, and inspect the calculated result.</p>
+  <span class="badge">Direct and indirect transitions · editable observations · live least-squares fit</span>
+</header>
+<main>
+<div class="grid">
+  <aside class="sidebar">
+    <section class="card"><h2>Experimental controls</h2><div class="body">
+      <div class="control"><label>Sample thickness <span class="value" id="thickOut">1.00 cm</span></label><input id="thickness" type="range" min="0.1" max="2" step="0.05" value="1"><small>Optical path length, x</small></div>
+      <div class="control"><label>Absorbance scale <span class="value" id="scaleOut">1.00×</span></label><input id="scale" type="range" min="0.25" max="2" step="0.05" value="1"><small>Models concentration or sample loading</small></div>
+      <div class="control"><label>Random noise <span class="value" id="noiseOut">0.00 A</span></label><input id="noise" type="range" min="0" max="0.2" step="0.01" value="0"><small>Measurement uncertainty in absorbance</small></div>
+      <div class="control"><label for="transition">Transition type</label><select id="transition"><option value="direct">Direct allowed: (αhν)²</option><option value="indirect">Indirect allowed: (αhν)½</option></select></div>
+      <div class="control"><label>Fit energy range</label><div class="row"><input id="fitMin" type="number" min="1" max="6.2" step="0.01" value="2.48"><input id="fitMax" type="number" min="1" max="6.2" step="0.01" value="3.54"></div><small>Choose the approximately linear portion of the Tauc plot</small></div>
+      <div class="buttons"><button class="primary" id="apply">Apply changes</button><button class="secondary" id="newNoise">New trial</button><button class="secondary" id="reset">Reset</button><button class="secondary" id="download">Export CSV</button></div>
+    </div></section>
+    <section class="card"><h2>Experiment guidance</h2><div class="body">
+      <ol class="steps"><li>Adjust sample and instrument parameters.</li><li>Click <b>Apply changes</b>.</li><li>Inspect the absorbance spectrum.</li><li>Choose the straight-line region of the Tauc plot.</li><li>Read the x-intercept as the band gap.</li></ol>
+      <div id="fitStatus" class="status" style="margin-top:14px">Ready.</div>
+    </div></section>
+  </aside>
+  <div class="content">
+    <section class="metrics">
+      <div class="card metric"><div class="k">Calculated band gap</div><div class="v" id="eg">—</div><div class="u">eV</div></div>
+      <div class="card metric"><div class="k">Reference value</div><div class="v">2.42</div><div class="u">eV</div></div>
+      <div class="card metric"><div class="k">Percentage error</div><div class="v" id="error">—</div><div class="u">%</div></div>
+      <div class="card metric"><div class="k">Fit quality R²</div><div class="v" id="r2">—</div><div class="u">linear regression</div></div>
+    </section>
+    <section class="plots">
+      <div class="card plot-wrap"><div class="plot-title">Absorption spectrum</div><div class="plot-sub">Absorbance A versus wavelength λ</div><svg id="absPlot" role="img" aria-label="Absorbance versus wavelength plot"></svg></div>
+      <div class="card plot-wrap"><div class="plot-title">Tauc plot</div><div class="plot-sub" id="taucSubtitle">(αhν)² versus photon energy hν</div><svg id="taucPlot" role="img" aria-label="Tauc plot"></svg></div>
+    </section>
+    <section class="data-layout">
+      <div class="card"><h2>Observation table</h2><div class="body"><div class="table-scroll"><table><thead><tr><th>λ (nm)</th><th>A</th><th>T (%)</th><th>hν (eV)</th><th id="yHead">(αhν)²</th></tr></thead><tbody id="dataBody"></tbody></table></div><div class="footer-note">Wavelength and baseline absorbance are editable. Click Apply changes after editing.</div></div></div>
+      <div class="card theory"><h2>Principle and equations</h2><div class="body">
+        <p>A UV–Visible spectrometer compares transmitted intensity <i>I</i> with incident intensity <i>I₀</i>. The optical band gap is obtained by extrapolating the linear Tauc region to the energy axis.</p>
+        <div class="equation">A = −log₁₀(I/I₀), &nbsp; T = 10<sup>−A</sup></div>
+        <div class="equation">α = 2.303A/x</div>
+        <div class="equation">hν (eV) = 1240/λ (nm)</div>
+        <div class="equation" id="taucEq">(αhν)² = C(hν − E<sub>g</sub>)</div>
+        <p><b>Interpretation.</b> The fitted line is <i>y = mhν + c</i>; therefore its energy-axis intercept is <i>E<sub>g</sub> = −c/m</i>.</p>
+        <p class="footer-note">Educational model based on the supplied experiment sheet. Actual laboratory results depend on sample preparation, baseline correction, scattering, spectral resolution, and fit-region selection.</p>
+      </div></div>
+    </section>
+  </div>
+</div>
+</main>
+<script>
+const original=[[200,2],[250,2.4],[300,2.7],[350,2.75],[400,2.4],[450,1.75],[500,.9],[600,.6],[700,.45],[800,.3],[900,.25],[1000,.2]];
+let base=original.map(r=>[...r]), seed=12345, rows=[];
+const $=id=>document.getElementById(id), fmt=(x,n=2)=>Number.isFinite(x)?x.toFixed(n):'—';
+function rng(){seed=(1664525*seed+1013904223)>>>0;return seed/4294967296}
+function normal(){return Math.sqrt(-2*Math.log(Math.max(rng(),1e-9)))*Math.cos(2*Math.PI*rng())}
+function readTable(){const trs=[...$('dataBody').querySelectorAll('tr')];if(!trs.length)return;base=trs.map(tr=>[+tr.querySelector('.wl').value,+tr.querySelector('.ab').value]).filter(r=>r.every(Number.isFinite)&&r[0]>0)}
+function calculate(){
+ const x=Math.max(.001,+$('thickness').value), sc=+$('scale').value, nz=+$('noise').value, mode=$('transition').value;
+ rows=base.map(([wl,a])=>{const A=Math.max(0,a*sc+nz*normal()),e=1240/wl,alpha=2.303*A/x,y=mode==='direct'?Math.pow(alpha*e,2):Math.sqrt(Math.max(0,alpha*e));return{wl,A,T:100*Math.pow(10,-A),e,alpha,y}}).sort((a,b)=>a.wl-b.wl);
+ renderTable();drawPlots();fit();
+}
+function renderTable(){const mode=$('transition').value;$('yHead').textContent=mode==='direct'?'(αhν)²':'(αhν)½';$('dataBody').innerHTML=rows.map((r,i)=>`<tr><td><input class="wl" type="number" step="1" value="${fmt(r.wl,0)}" aria-label="Wavelength row ${i+1}"></td><td><input class="ab" type="number" step="0.01" value="${fmt(r.A,3)}" aria-label="Absorbance row ${i+1}"></td><td>${fmt(r.T,3)}</td><td>${fmt(r.e,3)}</td><td>${r.y<10?fmt(r.y,3):fmt(r.y,1)}</td></tr>`).join('')}
+function regression(points){const n=points.length;if(n<2)return null;const sx=points.reduce((s,p)=>s+p.e,0),sy=points.reduce((s,p)=>s+p.y,0),sxx=points.reduce((s,p)=>s+p.e*p.e,0),sxy=points.reduce((s,p)=>s+p.e*p.y,0),den=n*sxx-sx*sx;if(Math.abs(den)<1e-12)return null;const m=(n*sxy-sx*sy)/den,c=(sy-m*sx)/n,mean=sy/n,ssTot=points.reduce((s,p)=>s+(p.y-mean)**2,0),ssRes=points.reduce((s,p)=>s+(p.y-(m*p.e+c))**2,0);return{m,c,r2:ssTot?1-ssRes/ssTot:1,n}}
+function fit(){let lo=+$('fitMin').value,hi=+$('fitMax').value;if(lo>hi)[lo,hi]=[hi,lo];const selected=rows.filter(r=>r.e>=lo&&r.e<=hi),f=regression(selected);if(!f||f.m<=0){$('eg').textContent=$('error').textContent=$('r2').textContent='—';$('fitStatus').className='status warning';$('fitStatus').textContent='Select at least two points in a rising linear region.';drawTauc(null);return}const eg=-f.c/f.m;$('eg').textContent=fmt(eg,3);$('error').textContent=fmt(Math.abs(eg-2.42)/2.42*100,2);$('r2').textContent=fmt(f.r2,4);$('fitStatus').className='status '+(f.r2>.98?'ok':'warning');$('fitStatus').textContent=`Fit uses ${f.n} points. ${f.r2>.98?'The chosen region is highly linear.':'Try adjusting the energy range to select a more linear region.'}`;drawTauc(f)}
+function dims(svg){const w=Math.max(420,svg.clientWidth||600),h=340;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);return{w,h,l:58,r:18,t:22,b:48}}
+function plotBase(svg,xmin,xmax,ymin,ymax,xlabel,ylabel){const d=dims(svg),pw=d.w-d.l-d.r,ph=d.h-d.t-d.b,X=x=>d.l+(x-xmin)/(xmax-xmin)*pw,Y=y=>d.t+ph-(y-ymin)/(ymax-ymin)*ph;let s='';for(let i=0;i<=5;i++){const x=xmin+(xmax-xmin)*i/5,px=X(x);s+=`<line class="gridline" x1="${px}" y1="${d.t}" x2="${px}" y2="${d.t+ph}"/><text class="tick" x="${px}" y="${d.h-27}" text-anchor="middle">${fmt(x,xmax-xmin<10?1:0)}</text>`}for(let i=0;i<=5;i++){const y=ymin+(ymax-ymin)*i/5,py=Y(y);s+=`<line class="gridline" x1="${d.l}" y1="${py}" x2="${d.w-d.r}" y2="${py}"/><text class="tick" x="${d.l-8}" y="${py+4}" text-anchor="end">${ymax<10?fmt(y,1):fmt(y,0)}</text>`}s+=`<line class="axis" x1="${d.l}" y1="${d.t+ph}" x2="${d.w-d.r}" y2="${d.t+ph}"/><line class="axis" x1="${d.l}" y1="${d.t}" x2="${d.l}" y2="${d.t+ph}"/><text class="label" x="${d.l+pw/2}" y="${d.h-5}" text-anchor="middle">${xlabel}</text><text class="label" transform="translate(15 ${d.t+ph/2}) rotate(-90)" text-anchor="middle">${ylabel}</text>`;return{...d,pw,ph,X,Y,s}}
+function drawAbs(){const svg=$('absPlot'),ys=rows.map(r=>r.A),xs=rows.map(r=>r.wl),ymax=Math.max(1,...ys)*1.1,p=plotBase(svg,Math.min(...xs),Math.max(...xs),0,ymax,'Wavelength λ (nm)','Absorbance A');const pts=rows.map(r=>`${p.X(r.wl)},${p.Y(r.A)}`).join(' ');p.s+=`<polyline class="curve" points="${pts}"/>`+rows.map(r=>`<circle class="dots" cx="${p.X(r.wl)}" cy="${p.Y(r.A)}" r="3.5"><title>λ=${fmt(r.wl,0)} nm, A=${fmt(r.A,3)}</title></circle>`).join('');svg.innerHTML=p.s}
+function drawTauc(f){const svg=$('taucPlot'),xs=rows.map(r=>r.e),ys=rows.map(r=>r.y),xmin=Math.max(0,Math.min(...xs)-.15),xmax=Math.max(...xs)+.15,ymax=Math.max(1,...ys)*1.1,p=plotBase(svg,xmin,xmax,0,ymax,'Photon energy hν (eV)',$('transition').value==='direct'?'(αhν)²':'(αhν)½');p.s+=rows.map(r=>`<circle class="tauc" cx="${p.X(r.e)}" cy="${p.Y(r.y)}" r="4"><title>hν=${fmt(r.e,3)} eV, y=${fmt(r.y,3)}</title></circle>`).join('');if(f){const eg=-f.c/f.m,xa=Math.max(xmin,eg),xb=Math.min(xmax,(ymax-f.c)/f.m),ya=f.m*xa+f.c,yb=f.m*xb+f.c;p.s+=`<line class="fit" x1="${p.X(xa)}" y1="${p.Y(ya)}" x2="${p.X(xb)}" y2="${p.Y(yb)}"/><line class="intercept" x1="${p.X(eg)}" y1="${p.Y(0)}" x2="${p.X(eg)}" y2="${p.Y(Math.min(ymax*.2,Math.max(0,f.m*(eg+.2)+f.c)))}"/><text class="legend" x="${p.X(Math.max(xmin,Math.min(xmax,eg)))}" y="${p.Y(0)-9}" text-anchor="middle">Eg = ${fmt(eg,3)} eV</text>`}svg.innerHTML=p.s}
+function drawPlots(){drawAbs();drawTauc(null)}
+function labels(){$('thickOut').textContent=fmt(+$('thickness').value,2)+' cm';$('scaleOut').textContent=fmt(+$('scale').value,2)+'×';$('noiseOut').textContent=fmt(+$('noise').value,2)+' A';const ind=$('transition').value==='indirect';$('taucSubtitle').textContent=ind?'(αhν)½ versus photon energy hν':'(αhν)² versus photon energy hν';$('taucEq').innerHTML=ind?'(αhν)<sup>½</sup> = C(hν − E<sub>g</sub>)':'(αhν)² = C(hν − E<sub>g</sub>)'}
+['thickness','scale','noise'].forEach(id=>$(id).addEventListener('input',labels));$('transition').addEventListener('change',()=>{labels();calculate()});$('apply').onclick=()=>{readTable();calculate()};$('newNoise').onclick=()=>{readTable();seed=(Date.now()>>>0);calculate()};$('reset').onclick=()=>{base=original.map(r=>[...r]);seed=12345;$('thickness').value=1;$('scale').value=1;$('noise').value=0;$('transition').value='direct';$('fitMin').value=2.48;$('fitMax').value=3.54;labels();calculate()};$('fitMin').addEventListener('change',fit);$('fitMax').addEventListener('change',fit);
+$('download').onclick=()=>{const head='Wavelength_nm,Absorbance,Transmittance_percent,Photon_energy_eV,Absorption_coefficient,Tauc_value\n',csv=head+rows.map(r=>[r.wl,r.A,r.T,r.e,r.alpha,r.y].join(',')).join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='uv_visible_simulation_data.csv';a.click();URL.revokeObjectURL(a.href)};
+window.addEventListener('resize',()=>{drawPlots();fit()});labels();calculate();
+</script>
+</body>
+</html>

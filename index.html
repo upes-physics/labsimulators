@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive virtual experiments for BTech Laboratory Physics">
+<title>BTech Laboratory Physics</title>
+<style>
+:root{--navy:#0f304e;--blue:#176fa6;--teal:#0f998f;--ink:#17283a;--muted:#657588;--line:#d8e3ec;--card:#fff;--shadow:0 12px 32px rgba(20,48,75,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#eef6fa 0,#f8f5ef 100%);color:var(--ink);font:15px/1.55 Inter,Segoe UI,Arial,sans-serif}
+header{background:linear-gradient(120deg,#0d2d49,#176fa6 58%,#118d88);color:#fff;padding:22px max(22px,calc((100vw - 1180px)/2));box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:20px;letter-spacing:-.01em}.nav a{color:#fff;text-decoration:none;padding:7px 11px;border:1px solid #ffffff55;border-radius:999px;font-size:13px}.hero{max-width:1180px;margin:0 auto;padding:72px 22px 56px}.hero span{display:inline-block;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:#d4f4f1}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.045em;margin:12px 0 17px;max-width:850px}.hero p{max-width:720px;font-size:18px;opacity:.9;margin:0}.wave{height:28px;background:linear-gradient(175deg,transparent 48%,#eef6fa 50%)}
+main{max-width:1180px;margin:0 auto;padding:46px 22px 70px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{font-size:28px;margin:0;letter-spacing:-.025em}.section-head p{margin:0;color:var(--muted)}
+.experiments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(20,48,75,.14)}.visual{height:190px;display:grid;place-items:center;position:relative;overflow:hidden}.uv{background:linear-gradient(125deg,#332b83,#176fa6 45%,#18a89b 75%,#efb746)}.xrd{background:linear-gradient(130deg,#112f4b,#1c6c99 65%,#9bd4d0)}.visual svg{width:88%;height:78%}.number{position:absolute;top:15px;left:16px;padding:5px 9px;background:#ffffff20;border:1px solid #ffffff55;color:#fff;border-radius:999px;font-size:12px;font-weight:800}.card-body{padding:23px}.tag{color:var(--teal);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.card h3{font-size:23px;margin:7px 0 8px;letter-spacing:-.02em}.card p{color:var(--muted);margin:0 0 19px;min-height:48px}.features{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}.features span{background:#eff5f8;color:#496177;border-radius:999px;padding:4px 9px;font-size:12px}.launch{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;padding:10px 15px;border-radius:9px;font-weight:800}.launch:hover{background:#125c8b}.launch:focus,.nav a:focus{outline:3px solid #efbd4c;outline-offset:3px}
+.coming{margin-top:25px;border:1px dashed #aebdca;border-radius:15px;padding:21px;text-align:center;color:var(--muted);background:#ffffff88}.coming b{color:var(--ink)}footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--muted);background:#f8fafb;font-size:13px}
+@media(max-width:760px){.nav a{display:none}.hero{padding-top:48px}.experiments{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:5px}.card p{min-height:0}}
+</style>
+</head>
+<body>
+<header>
+ <nav class="nav" aria-label="Main navigation"><div class="brand">BTech Laboratory Physics</div><a href="#experiments">View experiments</a></nav>
+ <div class="hero"><span>Interactive virtual laboratory</span><h1>BTech Laboratory Physics</h1><p>Explore physical principles through browser-based experiments. Change parameters, collect simulated observations, analyse graphs, and calculate experimental results.</p></div>
+ <div class="wave"></div>
+</header>
+<main id="experiments">
+ <div class="section-head"><div><h2>Experiments</h2><p>Select an experiment to open its interactive simulator.</p></div><p>2 experiments available</p></div>
+ <section class="experiments" aria-label="Available laboratory experiments">
+  <article class="card">
+   <div class="visual uv"><span class="number">Experiment 01</span><svg viewBox="0 0 520 150" role="img" aria-label="UV Visible absorption spectrum illustration"><defs><linearGradient id="spectrum" x1="0" x2="1"><stop stop-color="#7142a8"/><stop offset=".25" stop-color="#347ec1"/><stop offset=".5" stop-color="#26b4a5"/><stop offset=".75" stop-color="#f0d14c"/><stop offset="1" stop-color="#ef7048"/></linearGradient></defs><line x1="38" y1="122" x2="492" y2="122" stroke="#fff" opacity=".65"/><line x1="38" y1="18" x2="38" y2="122" stroke="#fff" opacity=".65"/><path d="M38 35 C92 22,120 28,155 46 S225 84,270 96 S350 111,492 117" fill="none" stroke="#fff" stroke-width="4"/><rect x="38" y="130" width="454" height="8" rx="4" fill="url(#spectrum)"/></svg></div>
+   <div class="card-body"><div class="tag">Optical properties</div><h3>UV–Visible Band Gap</h3><p>Determine the optical band gap of a material from its absorption spectrum and Tauc plot.</p><div class="features"><span>Absorption spectrum</span><span>Tauc analysis</span><span>Linear regression</span><span>CSV export</span></div><a class="launch" href="experiments/uv-visible-band-gap.html">Launch simulator <span aria-hidden="true">→</span></a></div>
+  </article>
+  <article class="card">
+   <div class="visual xrd"><span class="number">Experiment 02</span><svg viewBox="0 0 520 150" role="img" aria-label="X-ray diffraction pattern illustration"><line x1="38" y1="125" x2="492" y2="125" stroke="#fff" opacity=".65"/><line x1="38" y1="18" x2="38" y2="125" stroke="#fff" opacity=".65"/><path d="M38 121 L100 120 L124 118 L132 28 L140 118 L195 120 L224 54 L232 119 L305 120 L328 78 L336 120 L392 121 L407 90 L415 121 L447 121 L458 103 L466 121 L492 121" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg></div>
+   <div class="card-body"><div class="tag">Crystal structure</div><h3>X-Ray Diffraction</h3><p>Calculate interplanar spacing and the cubic lattice parameter from indexed XRD peaks.</p><div class="features"><span>Bragg’s law</span><span>Miller indices</span><span>Virtual goniometer</span><span>CSV export</span></div><a class="launch" href="experiments/xrd-lattice-parameter.html">Launch simulator <span aria-hidden="true">→</span></a></div>
+  </article>
+ </section>
+ <!--div class="coming"><b>More experiments will be added.</b><br>The card-based layout can be extended by copying an existing experiment card and changing its title, description, and link.</div-->
+</main>
+<footer>BTech Laboratory Physics · Interactive simulations for teaching and learning</footer>
+</body>
+</html>
