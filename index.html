@@ -23,7 +23,7 @@ main{max-width:1180px;margin:0 auto;padding:46px 22px 70px}.section-head{display
  <div class="wave"></div>
 </header>
 <main id="experiments">
- <div class="section-head"><div><h2>Experiments</h2><p>Select an experiment to open its interactive simulator.</p></div><p>2 experiments available</p></div>
+ <div class="section-head"><div><h2>Experiments</h2><p>Select an experiment to open its interactive simulator.</p></div><p>3 experiments available</p></div>
  <section class="experiments" aria-label="Available laboratory experiments">
   <article class="card">
    <div class="visual uv"><span class="number">Experiment 01</span><svg viewBox="0 0 520 150" role="img" aria-label="UV Visible absorption spectrum illustration"><defs><linearGradient id="spectrum" x1="0" x2="1"><stop stop-color="#7142a8"/><stop offset=".25" stop-color="#347ec1"/><stop offset=".5" stop-color="#26b4a5"/><stop offset=".75" stop-color="#f0d14c"/><stop offset="1" stop-color="#ef7048"/></linearGradient></defs><line x1="38" y1="122" x2="492" y2="122" stroke="#fff" opacity=".65"/><line x1="38" y1="18" x2="38" y2="122" stroke="#fff" opacity=".65"/><path d="M38 35 C92 22,120 28,155 46 S225 84,270 96 S350 111,492 117" fill="none" stroke="#fff" stroke-width="4"/><rect x="38" y="130" width="454" height="8" rx="4" fill="url(#spectrum)"/></svg></div>
@@ -33,8 +33,12 @@ main{max-width:1180px;margin:0 auto;padding:46px 22px 70px}.section-head{display
    <div class="visual xrd"><span class="number">Experiment 02</span><svg viewBox="0 0 520 150" role="img" aria-label="X-ray diffraction pattern illustration"><line x1="38" y1="125" x2="492" y2="125" stroke="#fff" opacity=".65"/><line x1="38" y1="18" x2="38" y2="125" stroke="#fff" opacity=".65"/><path d="M38 121 L100 120 L124 118 L132 28 L140 118 L195 120 L224 54 L232 119 L305 120 L328 78 L336 120 L392 121 L407 90 L415 121 L447 121 L458 103 L466 121 L492 121" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg></div>
    <div class="card-body"><div class="tag">Crystal structure</div><h3>X-Ray Diffraction</h3><p>Calculate interplanar spacing and the cubic lattice parameter from indexed XRD peaks.</p><div class="features"><span>Bragg’s law</span><span>Miller indices</span><span>Virtual goniometer</span><span>CSV export</span></div><a class="launch" href="experiments/xrd-lattice-parameter.html">Launch simulator <span aria-hidden="true">→</span></a></div>
   </article>
+  <article class="card">
+   <div class="visual" style="background:linear-gradient(130deg,#20395d,#684aa0 60%,#e26c74)"><span class="number">Experiment 03</span><svg viewBox="0 0 520 150" role="img" aria-label="Hall effect illustration"><defs><marker id="arrowHall" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#fff"/></marker></defs><rect x="95" y="38" width="330" height="76" rx="10" fill="#d7f2ed" stroke="#fff" stroke-width="3"/><line x1="120" y1="76" x2="397" y2="76" stroke="#e8514e" stroke-width="5" marker-end="url(#arrowHall)"/><g fill="#276f9f"><circle cx="170" cy="56" r="10"/><circle cx="240" cy="56" r="10"/><circle cx="310" cy="56" r="10"/><circle cx="380" cy="56" r="10"/></g><g fill="#fff" font-size="18" font-weight="bold" text-anchor="middle"><text x="170" y="62">−</text><text x="240" y="62">−</text><text x="310" y="62">−</text><text x="380" y="62">−</text></g><text x="260" y="28" fill="#fff" text-anchor="middle" font-size="16" font-weight="bold">B ⊗</text><text x="260" y="141" fill="#fff" text-anchor="middle" font-size="15">Transverse Hall voltage</text></svg></div>
+   <div class="card-body"><div class="tag">Semiconductor transport</div><h3>Hall Effect</h3><p>Determine carrier type, Hall coefficient, and carrier density using two slope methods.</p><div class="features"><span>Lorentz force</span><span>Hall voltage</span><span>Carrier density</span><span>Two live graphs</span></div><a class="launch" href="experiments/hall-effect.html">Launch simulator <span aria-hidden="true">→</span></a></div>
+  </article>
  </section>
- <!--div class="coming"><b>More experiments will be added.</b><br>The card-based layout can be extended by copying an existing experiment card and changing its title, description, and link.</div-->
+ <div class="coming"><b>More experiments will be added.</b><br>The card-based layout can be extended by copying an existing experiment card and changing its title, description, and link.</div>
 </main>
 <footer>BTech Laboratory Physics · Interactive simulations for teaching and learning</footer>
 </body>

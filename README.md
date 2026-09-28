@@ -2,10 +2,18 @@
 
 Static GitHub Pages website containing interactive browser-based physics laboratory simulations.
 
+Each experiment is organized into four teaching sections:
+
+- Introduction
+- Concepts and plot interpretation
+- Interactive physics animation
+- Full simulator
+
 ## Experiments
 
 1. UV–Visible Band Gap
 2. X-Ray Diffraction
+3. Hall Effect
 
 ## Publish with GitHub Pages
 
