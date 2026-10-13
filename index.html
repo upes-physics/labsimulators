@@ -37,8 +37,85 @@ main{max-width:1180px;margin:0 auto;padding:46px 22px 70px}.section-head{display
    <div class="visual" style="background:linear-gradient(130deg,#20395d,#684aa0 60%,#e26c74)"><span class="number">Experiment 03</span><svg viewBox="0 0 520 150" role="img" aria-label="Hall effect illustration"><defs><marker id="arrowHall" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#fff"/></marker></defs><rect x="95" y="38" width="330" height="76" rx="10" fill="#d7f2ed" stroke="#fff" stroke-width="3"/><line x1="120" y1="76" x2="397" y2="76" stroke="#e8514e" stroke-width="5" marker-end="url(#arrowHall)"/><g fill="#276f9f"><circle cx="170" cy="56" r="10"/><circle cx="240" cy="56" r="10"/><circle cx="310" cy="56" r="10"/><circle cx="380" cy="56" r="10"/></g><g fill="#fff" font-size="18" font-weight="bold" text-anchor="middle"><text x="170" y="62">−</text><text x="240" y="62">−</text><text x="310" y="62">−</text><text x="380" y="62">−</text></g><text x="260" y="28" fill="#fff" text-anchor="middle" font-size="16" font-weight="bold">B ⊗</text><text x="260" y="141" fill="#fff" text-anchor="middle" font-size="15">Transverse Hall voltage</text></svg></div>
    <div class="card-body"><div class="tag">Semiconductor transport</div><h3>Hall Effect</h3><p>Determine carrier type, Hall coefficient, and carrier density using two slope methods.</p><div class="features"><span>Lorentz force</span><span>Hall voltage</span><span>Carrier density</span><span>Two live graphs</span></div><a class="launch" href="experiments/hall-effect.html">Launch simulator <span aria-hidden="true">→</span></a></div>
   </article>
- </section>
- <div class="coming"><b>More experiments will be added.</b><br>The card-based layout can be extended by copying an existing experiment card and changing its title, description, and link.</div>
+
+<article class="card">
+ <div class="visual" style="background:linear-gradient(130deg,#172f55,#225f8f 58%,#e0a62f)">
+  <span class="number">Experiment 04</span>
+  <svg viewBox="0 0 520 150" role="img" aria-label="Photoelectric effect illustration">
+   <defs>
+    <marker id="arrowElectron" viewBox="0 0 10 10" refX="8" refY="5"
+      markerWidth="6" markerHeight="6" orient="auto">
+     <path d="M0 0 L10 5 L0 10z" fill="#8ee8ff"/>
+    </marker>
+   </defs>
+
+   <!-- Incident light -->
+   <g stroke="#ffd85b" stroke-width="4">
+    <line x1="42" y1="30" x2="120" y2="61"/>
+    <line x1="42" y1="55" x2="120" y2="72"/>
+    <line x1="42" y1="80" x2="120" y2="83"/>
+   </g>
+   <text x="42" y="111" fill="#fff" font-size="14">Incident light</text>
+
+   <!-- Photoelectric tube -->
+   <rect x="120" y="25" width="280" height="92" rx="45"
+     fill="#ffffff18" stroke="#fff" stroke-width="3"/>
+
+   <!-- Cathode and collector -->
+   <path d="M158 48 Q132 71 158 95" fill="none"
+     stroke="#d9edf6" stroke-width="10"/>
+   <path d="M362 48 Q388 71 362 95" fill="none"
+     stroke="#d9edf6" stroke-width="10"/>
+
+   <text x="151" y="136" fill="#fff" text-anchor="middle"
+     font-size="13">Cathode</text>
+   <text x="370" y="136" fill="#fff" text-anchor="middle"
+     font-size="13">Collector</text>
+
+   <!-- Emitted electrons -->
+   <g fill="#8ee8ff">
+    <circle cx="194" cy="55" r="6"/>
+    <circle cx="220" cy="75" r="6"/>
+    <circle cx="191" cy="91" r="6"/>
+   </g>
+   <g stroke="#8ee8ff" stroke-width="3" marker-end="url(#arrowElectron)">
+    <line x1="202" y1="55" x2="326" y2="55"/>
+    <line x1="228" y1="75" x2="342" y2="75"/>
+    <line x1="199" y1="91" x2="326" y2="91"/>
+   </g>
+
+   <!-- Ammeter -->
+   <circle cx="448" cy="71" r="25" fill="#ffffff20"
+     stroke="#fff" stroke-width="3"/>
+   <text x="448" y="78" fill="#fff" text-anchor="middle"
+     font-size="21" font-weight="bold">A</text>
+   <line x1="400" y1="71" x2="423" y2="71"
+     stroke="#fff" stroke-width="3"/>
+  </svg>
+ </div>
+
+ <div class="card-body">
+  <div class="tag">Quantum physics · External source</div>
+  <h3>Photoelectric Effect</h3>
+  <p>Study photoelectric emission and investigate how light frequency and intensity affect the photocurrent and stopping potential.</p>
+
+  <div class="features">
+   <span>Einstein’s equation</span>
+   <span>Stopping potential</span>
+   <span>Threshold frequency</span>
+   <span>Photocurrent</span>
+  </div>
+
+  <a class="launch"
+    href="https://vlab.amrita.edu/?sub=1&amp;brch=195&amp;sim=840&amp;cnt=1"
+    target="_blank"
+    rel="noopener noreferrer">
+   Launch experiment <span aria-hidden="true">↗</span>
+  </a>
+ </div>
+</article> 
+</section>
+ <!--div class="coming"><b>More experiments will be added.</b><br>The card-based layout can be extended by copying an existing experiment card and changing its title, description, and link.</div-->
 </main>
 <footer>BTech Laboratory Physics · Interactive simulations for teaching and learning</footer>
 </body>
